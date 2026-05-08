@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -8,23 +7,41 @@
 <link rel="icon" href="logo.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
+/* ============================================================
+   CLUB RENAISSANCE DE SAFI — WEBSITE v3.0
+   Built by SiteBladi 🇲🇦 © 2026
+   🔧 EDIT:
+   - WhatsApp: search "212667069474"
+   - Maps link: search "MAPS_URL"
+   🛒 ADD PRODUCT: search "PRODUCTS_DATA"
+============================================================ */
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--black:#080808;--dark:#101010;--dark2:#181818;--dark3:#222;--red:#CC0000;--red2:#FF2020;--red3:#8B0000;--gold:#D4AF37;--white:#FFF;--gray:#999;--light:#CCC;}
+:root{
+  --black:#080808;--dark:#101010;--dark2:#181818;--dark3:#222;
+  --red:#CC0000;--red2:#FF2020;--red3:#8B0000;
+  --gold:#D4AF37;--gold2:#F0C040;
+  --white:#FFF;--gray:#999;--light:#CCC;
+}
 html{scroll-behavior:smooth;}
 body{font-family:'Tajawal',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:var(--dark);}
 ::-webkit-scrollbar-thumb{background:linear-gradient(var(--red),var(--gold));border-radius:3px;}
-.page{display:none;}.page.active{display:block;}
+.page{display:none;}
+.page.active{display:block;}
+
+/* LOADER */
 #loader{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity 0.5s;}
 #loader.hide{opacity:0;pointer-events:none;}
-.l-logo{width:90px;height:90px;border-radius:50%;overflow:hidden;border:3px solid var(--red);animation:l-pulse 1.5s ease-in-out infinite;}
+.l-logo{width:90px;height:90px;border-radius:50%;overflow:hidden;border:3px solid var(--red);box-shadow:0 0 30px rgba(204,0,0,0.6);animation:l-pulse 1.5s ease-in-out infinite;}
 @keyframes l-pulse{0%,100%{box-shadow:0 0 20px rgba(204,0,0,0.4);}50%{box-shadow:0 0 50px rgba(204,0,0,0.9);}}
 .l-logo img{width:100%;height:100%;object-fit:cover;}
 .l-name{font-size:12px;letter-spacing:6px;color:var(--gray);text-transform:uppercase;}
 .l-bar{width:200px;height:2px;background:var(--dark2);border-radius:2px;overflow:hidden;}
-.l-fill{height:100%;background:linear-gradient(to left,var(--gold),var(--red));animation:l-bar 1s forwards;}
-@keyframes l-bar{0%{width:0}100%{width:100%}}
+.l-fill{height:100%;background:linear-gradient(to left,var(--gold),var(--red));animation:l-bar 1s ease-in-out forwards;}
+@keyframes l-bar{0%{width:0%;}100%{width:100%;}}
+
+/* NAV */
 nav{position:sticky;top:0;z-index:200;height:68px;background:rgba(8,8,8,0.97);backdrop-filter:blur(16px);border-bottom:1px solid rgba(204,0,0,0.25);display:flex;align-items:center;justify-content:space-between;padding:0 40px;gap:20px;}
 .nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer;flex-shrink:0;}
 .nav-logo img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(204,0,0,0.4);}
@@ -47,10 +64,12 @@ nav{position:sticky;top:0;z-index:200;height:68px;background:rgba(8,8,8,0.97);ba
 .mob-menu.open{display:flex;}
 .mob-menu a{color:var(--gray);font-size:15px;padding:14px 32px;border-bottom:1px solid rgba(255,255,255,0.04);cursor:pointer;transition:all 0.2s;text-decoration:none;}
 .mob-menu a:hover{color:var(--white);background:rgba(204,0,0,0.06);}
+
+/* HERO */
 .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:100px 40px 60px;text-align:center;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(139,0,0,0.3),transparent 70%),linear-gradient(180deg,#080808,#150000 50%,#080808);}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(139,0,0,0.3),rgba(8,8,8,0) 70%),linear-gradient(180deg,#080808,#150000 50%,#080808);}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(204,0,0,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(204,0,0,0.07) 1px,transparent 1px);background-size:64px 64px;animation:grid-drift 25s linear infinite;}
-@keyframes grid-drift{to{transform:translateY(64px)}}
+@keyframes grid-drift{to{transform:translateY(64px);}}
 .hero-glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(204,0,0,0.18),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:glow-pulse 3s ease-in-out infinite;}
 @keyframes glow-pulse{0%,100%{opacity:0.5;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15);}}
 .particles{position:absolute;inset:0;pointer-events:none;}
@@ -61,7 +80,8 @@ nav{position:sticky;top:0;z-index:200;height:68px;background:rgba(8,8,8,0.97);ba
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--red);animation:blink 1.5s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
 .hero-h1{font-size:clamp(40px,8vw,88px);font-weight:900;line-height:1.05;margin-bottom:20px;animation:fade-up 0.8s 0.5s both;}
-.hero-h1 .w{color:var(--white)}.hero-h1 .r{color:var(--red);text-shadow:0 0 40px rgba(204,0,0,0.6);}
+.hero-h1 .w{color:var(--white);}
+.hero-h1 .r{color:var(--red);text-shadow:0 0 40px rgba(204,0,0,0.6);}
 .hero-h1 .o{-webkit-text-stroke:1.5px rgba(255,255,255,0.4);color:transparent;font-size:0.6em;letter-spacing:6px;display:block;}
 .hero-sub{font-size:clamp(14px,2vw,17px);color:var(--gray);line-height:1.9;margin-bottom:40px;animation:fade-up 0.8s 0.7s both;max-width:560px;margin-inline:auto;}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fade-up 0.8s 0.9s both;margin-bottom:64px;}
@@ -72,20 +92,29 @@ nav{position:sticky;top:0;z-index:200;height:68px;background:rgba(8,8,8,0.97);ba
 .h-num{font-size:clamp(28px,4vw,48px);font-weight:900;background:linear-gradient(135deg,var(--red),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .h-lbl{font-size:11px;color:var(--gray);letter-spacing:2px;margin-top:4px;}
 @keyframes fade-up{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+
+/* MARQUEE */
 .marquee{overflow:hidden;background:linear-gradient(90deg,var(--red3),var(--red),var(--red3));padding:13px 0;border-top:1px solid rgba(212,175,55,0.2);border-bottom:1px solid rgba(212,175,55,0.2);}
 .m-track{display:flex;width:max-content;animation:marquee 22s linear infinite;}
 .m-item{font-size:12px;font-weight:800;letter-spacing:5px;color:rgba(255,255,255,0.9);padding:0 32px;text-transform:uppercase;}
 .m-dot{color:var(--gold);font-size:10px;}
-@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes marquee{to{transform:translateX(-50%);}}
+
+/* SECTIONS */
 .section{padding:96px 40px;}
 .s-hdr{text-align:center;margin-bottom:64px;}
 .s-eye{font-size:10px;letter-spacing:7px;color:var(--red);text-transform:uppercase;margin-bottom:12px;display:block;}
 .s-title{font-size:clamp(26px,4vw,46px);font-weight:900;color:var(--white);line-height:1.2;margin-bottom:14px;}
-.s-title .acc{color:var(--red);}.s-title .gold{color:var(--gold);}
+.s-title .acc{color:var(--red);}
+.s-title .gold{color:var(--gold);}
 .s-desc{font-size:15px;color:var(--gray);line-height:1.9;max-width:520px;margin:0 auto;}
 .s-line{display:flex;justify-content:center;gap:6px;margin-top:22px;}
 .s-line span{height:3px;border-radius:3px;}
-.sl1{width:40px;background:var(--red);}.sl2{width:12px;background:var(--gold);}.sl3{width:6px;background:rgba(204,0,0,0.3);}
+.sl1{width:40px;background:var(--red);}
+.sl2{width:12px;background:var(--gold);}
+.sl3{width:6px;background:rgba(204,0,0,0.3);}
+
+/* EQ CARDS */
 .eq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;max-width:1100px;margin:0 auto;}
 .eq-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:28px 20px;text-align:center;transition:all 0.35s;position:relative;overflow:hidden;cursor:default;}
 .eq-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(204,0,0,0.08),transparent);opacity:0;transition:opacity 0.35s;}
@@ -96,6 +125,8 @@ nav{position:sticky;top:0;z-index:200;height:68px;background:rgba(8,8,8,0.97);ba
 .eq-name{font-size:14px;font-weight:700;color:var(--white);margin-bottom:6px;}
 .eq-desc{font-size:12px;color:var(--gray);line-height:1.6;}
 .eq-tag{display:inline-block;font-size:10px;background:rgba(204,0,0,0.15);color:var(--red);border-radius:20px;padding:3px 10px;margin-top:10px;letter-spacing:1px;}
+
+/* SUBS */
 .subs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
 .sub-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:36px 24px;position:relative;transition:all 0.4s;overflow:hidden;cursor:pointer;}
 .sub-card::before{content:'';position:absolute;top:0;inset-inline:0;height:3px;background:linear-gradient(to left,var(--red3),var(--red));opacity:0;transition:opacity 0.3s;}
@@ -114,6 +145,8 @@ nav{position:sticky;top:0;z-index:200;height:68px;background:rgba(8,8,8,0.97);ba
 .sub-btn{width:100%;padding:13px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:all 0.3s;border:1px solid rgba(204,0,0,0.35);background:transparent;color:var(--white);}
 .sub-card.pop .sub-btn{background:linear-gradient(135deg,var(--red),var(--red3));border-color:var(--red);}
 .sub-btn:hover{background:linear-gradient(135deg,var(--red),var(--red3));border-color:var(--red);}
+
+/* ABOUT */
 .about-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;}
 .about-img{aspect-ratio:3/4;background:linear-gradient(160deg,#1A0000,#350000,#0A0000);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:110px;border:1px solid rgba(204,0,0,0.2);position:relative;overflow:hidden;}
 .about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,0.7),transparent 50%);}
@@ -130,12 +163,16 @@ nav{position:sticky;top:0;z-index:200;height:68px;background:rgba(8,8,8,0.97);ba
 .feat-icon{width:46px;height:46px;background:rgba(204,0,0,0.12);border:1px solid rgba(204,0,0,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .feat-body h4{font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;}
 .feat-body p{font-size:12px;color:var(--gray);line-height:1.7;}
+
+/* FACILITIES */
 .fac-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;max-width:1100px;margin:0 auto;}
 .fac-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.05);border-radius:10px;padding:24px 16px;text-align:center;transition:all 0.3s;}
 .fac-card:hover{border-color:rgba(212,175,55,0.3);transform:translateY(-4px);}
 .fac-icon{font-size:34px;margin-bottom:12px;display:block;}
 .fac-name{font-size:13px;font-weight:700;color:var(--white);margin-bottom:4px;}
 .fac-desc{font-size:11px;color:var(--gray);}
+
+/* COACHING */
 .coaching-box{max-width:1100px;margin:0 auto;background:linear-gradient(135deg,#150000,#0A0A0A 60%);border:1px solid rgba(204,0,0,0.25);border-radius:16px;padding:60px;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;position:relative;overflow:hidden;}
 .coaching-box::before{content:'COACHING';position:absolute;font-size:140px;font-weight:900;color:rgba(204,0,0,0.04);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;letter-spacing:10px;}
 .coaching-box::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(204,0,0,0.08),transparent 60%);pointer-events:none;}
@@ -158,6 +195,8 @@ nav{position:sticky;top:0;z-index:200;height:68px;background:rgba(8,8,8,0.97);ba
 .goal-icon{font-size:36px;margin-bottom:12px;display:block;}
 .goal-name{font-size:14px;font-weight:700;color:var(--white);margin-bottom:6px;}
 .goal-desc{font-size:12px;color:var(--gray);line-height:1.6;}
+
+/* CONTACT */
 .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;align-items:start;}
 .map-box{background:var(--dark2);border:1px solid rgba(204,0,0,0.2);border-radius:14px;height:380px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;position:relative;overflow:hidden;}
 .map-box::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 49px,rgba(204,0,0,0.04) 49px,rgba(204,0,0,0.04) 50px),repeating-linear-gradient(90deg,transparent,transparent 49px,rgba(204,0,0,0.04) 49px,rgba(204,0,0,0.04) 50px);}
@@ -176,43 +215,117 @@ nav{position:sticky;top:0;z-index:200;height:68px;background:rgba(8,8,8,0.97);ba
 .soc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px;}
 .soc-btn{display:flex;align-items:center;gap:10px;background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:14px 16px;color:var(--white);font-size:13px;font-weight:700;transition:all 0.3s;cursor:pointer;text-decoration:none;}
 .soc-btn:hover{border-color:rgba(204,0,0,0.4);transform:translateY(-3px);}
-/* STORE */
+
+/* ══ STORE ══ */
 .filter-wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:48px;}
 .filter-btn{background:var(--dark2);color:var(--gray);border:1px solid rgba(255,255,255,0.08);padding:10px 22px;border-radius:40px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Tajawal',sans-serif;transition:all 0.3s;}
 .filter-btn:hover,.filter-btn.active{background:var(--red);color:var(--white);border-color:var(--red);}
-.store-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;max-width:1100px;margin:0 auto;}
-.prod-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;transition:all 0.35s;position:relative;}
+.store-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
+
+/* بطاقة المنتج المحسّنة */
+.prod-card{background:var(--dark2);border:1px solid rgba(255,255,255,0.06);border-radius:14px;overflow:hidden;transition:all 0.35s;position:relative;cursor:pointer;}
 .prod-card:hover{transform:translateY(-8px);border-color:rgba(204,0,0,0.35);box-shadow:0 16px 48px rgba(204,0,0,0.12);}
 .prod-card.hidden{display:none;}
-/* SVG product image area */
-.prod-img{height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
-.prod-img svg{transition:transform 0.4s;filter:drop-shadow(0 8px 16px rgba(0,0,0,0.5));}
-.prod-card:hover .prod-img svg{transform:scale(1.06) translateY(-4px);}
-.prod-badge{position:absolute;top:12px;right:12px;color:var(--white);font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;font-family:'Tajawal',sans-serif;z-index:2;}
-.b-best{background:#D4AF37;color:#000;}
-.b-top{background:#CC0000;}
-.b-new{background:#00AA55;}
-.b-adv{background:#5500CC;}
-.prod-body{padding:18px;}
-.prod-cat{font-size:10px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:6px;}
-.prod-name{font-size:16px;font-weight:700;color:var(--white);margin-bottom:4px;}
-.prod-brand{font-size:11px;color:var(--gold);margin-bottom:8px;font-weight:600;letter-spacing:1px;}
-.prod-desc{font-size:12px;color:var(--gray);line-height:1.6;margin-bottom:10px;}
-.prod-weight{font-size:11px;color:rgba(255,255,255,0.3);margin-bottom:14px;}
-.prod-footer{display:flex;align-items:center;justify-content:space-between;}
+
+/* صورة المنتج */
+.prod-img{height:200px;position:relative;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;}
+.prod-img img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform 0.4s;}
+.prod-card:hover .prod-img img{transform:scale(1.06);}
+.prod-img-ph{font-size:72px;display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:var(--dark3);}
+.prod-badge{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;padding:4px 11px;border-radius:20px;font-family:'Tajawal',sans-serif;z-index:2;}
+.pb-best{background:#FAC775;color:#633806;}
+.pb-top{background:#C0DD97;color:#1f4d09;}
+.pb-new{background:var(--red);color:#fff;}
+.pb-adv{background:#8B5CF6;color:#fff;}
+.pb-club{background:var(--dark3);color:var(--gold);border:1px solid var(--gold);}
+
+.prod-body{padding:16px;}
+.prod-cat{font-size:10px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:5px;}
+.prod-name{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;line-height:1.35;}
+.prod-desc{font-size:12px;color:var(--gray);line-height:1.6;margin-bottom:8px;}
+.prod-weight{font-size:11px;color:rgba(255,255,255,0.3);margin-bottom:8px;}
+.prod-rating{font-size:14px;margin-bottom:12px;display:flex;align-items:center;gap:5px;}
+.prod-rating span{font-size:11px;color:var(--gray);}
+.prod-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;}
 .prod-price{font-size:22px;font-weight:900;color:var(--gold);}
 .prod-price span{font-size:12px;color:var(--gray);font-weight:400;}
-.add-btn{background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);color:var(--red);padding:8px 16px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:all 0.3s;}
+.add-btn{background:rgba(204,0,0,0.15);border:1px solid rgba(204,0,0,0.3);color:var(--red);padding:8px 16px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:all 0.3s;white-space:nowrap;}
 .add-btn:hover,.add-btn.added{background:var(--red);color:var(--white);border-color:var(--red);}
+
+/* شريط السلة */
 .cart-bar{position:fixed;bottom:0;inset-inline:0;background:linear-gradient(135deg,rgba(26,0,0,0.98),rgba(24,24,24,0.98));border-top:1px solid rgba(204,0,0,0.3);padding:16px 40px;display:none;align-items:center;justify-content:space-between;z-index:150;backdrop-filter:blur(12px);}
 .cart-bar.show{display:flex;}
 .cart-bar-info{font-size:15px;font-weight:600;color:var(--white);}
-.cart-checkout-btn{background:linear-gradient(135deg,var(--red),var(--red3));color:var(--white);padding:12px 28px;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;}
+.cart-checkout-btn{background:linear-gradient(135deg,var(--red),var(--red3));color:var(--white);padding:12px 28px;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Tajawal',sans-serif;transition:all 0.3s;}
 .cart-checkout-btn:hover{background:var(--red2);}
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--dark3);border:1px solid rgba(204,0,0,0.4);border-radius:10px;padding:14px 28px;font-size:14px;font-weight:600;color:var(--white);font-family:'Tajawal',sans-serif;opacity:0;transition:all 0.3s;z-index:9998;pointer-events:none;white-space:nowrap;}
+
+/* TOAST */
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--dark3);border:1px solid rgba(204,0,0,0.4);border-radius:10px;padding:14px 28px;font-size:14px;font-weight:600;color:var(--white);font-family:'Tajawal',sans-serif;opacity:0;transition:all 0.3s;z-index:9998;pointer-events:none;white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,0.5);}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* ══ مودال المنتج ══ */
+#product-modal{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.88);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:16px;overflow-y:auto;}
+#product-modal.open{display:flex;}
+.modal-container{background:var(--dark2);border:1px solid rgba(204,0,0,0.25);border-radius:16px;width:100%;max-width:700px;max-height:90vh;overflow-y:auto;position:relative;}
+.modal-top-bar{padding:18px 24px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:flex-start;justify-content:space-between;gap:12px;position:sticky;top:0;background:var(--dark2);z-index:10;border-radius:16px 16px 0 0;}
+.modal-cat-tag{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--red);margin-bottom:4px;}
+.modal-prod-title{font-size:18px;font-weight:700;color:var(--white);line-height:1.3;}
+.modal-close-btn{width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.04);color:var(--gray);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.2s;font-family:'Tajawal',sans-serif;}
+.modal-close-btn:hover{background:rgba(204,0,0,0.15);color:var(--red);}
+.modal-content{padding:24px;}
+.modal-img-wrap{width:100%;height:280px;border-radius:12px;overflow:hidden;background:#fff;margin-bottom:20px;display:flex;align-items:center;justify-content:center;}
+.modal-img-wrap img{width:100%;height:100%;object-fit:contain;padding:16px;}
+.modal-price-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px;}
+.modal-price-big{font-size:30px;font-weight:900;color:var(--gold);}
+.modal-weight-tag{font-size:12px;color:var(--gray);padding:4px 12px;border:1px solid rgba(255,255,255,0.08);border-radius:20px;}
+.modal-certs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
+.cert-tag{font-size:11px;font-weight:600;padding:5px 13px;border-radius:20px;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.25);color:var(--gold);}
+.modal-long-desc{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:22px;padding:16px;background:rgba(204,0,0,0.04);border-radius:10px;border-right:3px solid rgba(204,0,0,0.4);}
+.modal-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,0.07);margin-bottom:18px;overflow-x:auto;}
+.modal-tab{font-size:13px;font-weight:600;padding:10px 18px;cursor:pointer;border:none;border-bottom:2px solid transparent;background:none;color:var(--gray);white-space:nowrap;transition:all 0.2s;font-family:'Tajawal',sans-serif;}
+.modal-tab.active{color:var(--red);border-bottom-color:var(--red);}
+.modal-tab-pane{display:none;}
+.modal-tab-pane.active{display:block;}
+.how-step{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+.how-step:last-child{border-bottom:none;}
+.how-num{width:28px;height:28px;border-radius:50%;background:rgba(204,0,0,0.12);border:1px solid rgba(204,0,0,0.25);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--red);flex-shrink:0;}
+.how-txt{font-size:13px;color:var(--gray);line-height:1.65;padding-top:4px;}
+.nut-table{width:100%;border-collapse:collapse;font-size:13px;}
+.nut-table th{padding:9px 0;color:var(--gray);font-weight:400;border-bottom:1px solid rgba(255,255,255,0.06);text-align:right;}
+.nut-table th:last-child{text-align:left;}
+.nut-table td{padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.03);color:var(--gray);}
+.nut-table td:last-child{font-weight:700;color:var(--white);text-align:left;}
+.nut-table tr:last-child td{border-bottom:none;}
+.ing-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+.ing-tag{font-size:12px;padding:5px 13px;border-radius:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);color:var(--gray);}
+.reviews-summary{display:flex;align-items:center;gap:18px;padding:16px;background:rgba(212,175,55,0.05);border:1px solid rgba(212,175,55,0.15);border-radius:10px;margin-bottom:18px;}
+.reviews-avg{font-size:42px;font-weight:900;color:var(--gold);line-height:1;}
+.stars-big{font-size:18px;color:var(--gold);letter-spacing:2px;}
+.reviews-count{font-size:12px;color:var(--gray);margin-top:3px;}
+.review-card{padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.review-card:last-child{border-bottom:none;}
+.review-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;}
+.review-name{font-size:13px;font-weight:700;color:var(--white);margin-bottom:3px;}
+.review-stars{font-size:13px;color:var(--gold);letter-spacing:1px;}
+.review-date{font-size:11px;color:var(--gray);}
+.review-text{font-size:13px;color:var(--gray);line-height:1.7;}
+.review-verified{font-size:11px;color:#5cb85c;margin-top:6px;display:flex;align-items:center;gap:4px;}
+.modal-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px;}
+.related-card{padding:12px;border:1px solid rgba(255,255,255,0.07);border-radius:10px;display:flex;gap:10px;align-items:center;cursor:pointer;transition:all 0.2s;background:rgba(255,255,255,0.02);}
+.related-card:hover{border-color:rgba(204,0,0,0.35);background:#150000;}
+.related-img{width:44px;height:44px;border-radius:8px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.related-img img{width:100%;height:100%;object-fit:contain;padding:3px;}
+.related-name{font-size:12px;font-weight:600;color:var(--white);line-height:1.3;}
+.related-price{font-size:12px;color:var(--gold);margin-top:2px;}
+.modal-add-btn{width:100%;padding:14px;font-size:15px;font-weight:700;border-radius:10px;border:none;background:linear-gradient(135deg,var(--red),var(--red3));color:var(--white);cursor:pointer;margin-top:20px;font-family:'Tajawal',sans-serif;transition:all 0.25s;letter-spacing:0.5px;}
+.modal-add-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(204,0,0,0.4);}
+.modal-add-btn.added{background:linear-gradient(135deg,#2d7a2d,#1a5c1a);}
+
+/* WHATSAPP */
 .wa-btn{position:fixed;bottom:28px;left:28px;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:26px;cursor:pointer;z-index:300;text-decoration:none;animation:wa-pulse 2.5s ease-in-out infinite;}
 @keyframes wa-pulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.5);}70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}}
+
+/* FOOTER */
 footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 40px 24px;}
 .f-inner{max-width:1100px;margin:0 auto;}
 .f-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
@@ -233,30 +346,46 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
 .f-made{font-size:12px;color:rgba(255,255,255,0.2);}
 .f-made a{color:var(--red);text-decoration:none;font-weight:600;}
 .mini-footer{background:#040404;border-top:1px solid rgba(204,0,0,0.1);padding:20px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+
+/* RESPONSIVE */
 @media(max-width:900px){
-  .nav-links{display:none;}.hamburger{display:flex;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
   .about-wrap,.coaching-box,.loc-grid,.f-top{grid-template-columns:1fr;}
   .goals-grid{grid-template-columns:1fr 1fr;}
-  .h-stat{padding:0 20px;}.section{padding:64px 24px;}
-  nav{padding:0 24px;}.cart-bar{padding:14px 24px;}
+  .h-stat{padding:0 20px;}
+  .section{padding:64px 24px;}
+  nav{padding:0 24px;}
+  .cart-bar{padding:14px 24px;}
+  .modal-container{border-radius:12px;}
+  .modal-img-wrap{height:200px;}
 }
 @media(max-width:480px){
   .goals-grid,.soc-row{grid-template-columns:1fr;}
   .hero-btns .btn-red,.hero-btns .btn-outline{width:100%;}
+  .store-grid{grid-template-columns:1fr 1fr;}
 }
+@media(max-width:360px){.store-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
+
 <div id="loader">
-  <div class="l-logo"><img src="logo.jpg" alt="logo"></div>
+  <div class="l-logo"><img src="logo.jpg" alt="Club Renaissance"></div>
   <div class="l-name">Club Renaissance · آسفي</div>
   <div class="l-bar"><div class="l-fill"></div></div>
 </div>
+
 <div class="toast" id="toast"></div>
+
+<!-- NAV -->
 <nav>
   <div class="nav-logo" onclick="nav('home')">
     <img src="logo.jpg" alt="logo">
-    <div class="logo-text"><strong>Club Renaissance de Safi</strong><span>نادي رينيسانس آسفي</span></div>
+    <div class="logo-text">
+      <strong>Club Renaissance de Safi</strong>
+      <span>نادي رينيسانس آسفي</span>
+    </div>
   </div>
   <ul class="nav-links">
     <li><a id="nl-home" class="act" onclick="nav('home')">الرئيسية</a></li>
@@ -268,9 +397,13 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
   </ul>
   <div class="nav-right">
     <button class="btn-red" onclick="nav('subscriptions')">اشترك الآن</button>
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
   <a onclick="nav('home');closeMenu()">🏠 الرئيسية</a>
   <a onclick="nav('about');closeMenu()">ℹ️ من نحن</a>
@@ -283,14 +416,19 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
   <a href="https://wa.me/212667069474" target="_blank">💬 واتساب</a>
 </div>
 
-<!-- HOME -->
+<!-- ══ HOME ══ -->
 <div class="page active" id="page-home">
   <section class="hero">
-    <div class="hero-bg"></div><div class="hero-grid"></div><div class="hero-glow"></div>
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
     <div class="particles" id="particles"></div>
     <div class="hero-content">
       <div class="hero-badge">🏆 منذ أكثر من 30 سنة · آسفي المغرب</div>
-      <h1 class="hero-h1"><span class="w">أطلق </span><span class="r">الوحش</span><span class="w"> الذي بداخلك</span><span class="o">CLUB RENAISSANCE · SAFI</span></h1>
+      <h1 class="hero-h1">
+        <span class="w">أطلق </span><span class="r">الوحش</span><span class="w"> الذي بداخلك</span>
+        <span class="o">CLUB RENAISSANCE · SAFI</span>
+      </h1>
       <p class="hero-sub">أقدم وأعرق نادي لكمال الأجسام في آسفي — خبرة تمتد لأكثر من 30 سنة في بناء الأبطال.</p>
       <div class="hero-btns">
         <button class="btn-red" onclick="nav('subscriptions')">اشترك الآن</button>
@@ -304,31 +442,54 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
       </div>
     </div>
   </section>
+
   <div class="marquee" aria-hidden="true">
     <div class="m-track">
-      <span class="m-item">BODYBUILDING</span><span class="m-dot">◆</span><span class="m-item">كمال الأجسام</span><span class="m-dot">◆</span><span class="m-item">CLUB RENAISSANCE</span><span class="m-dot">◆</span><span class="m-item">آسفي المغرب</span><span class="m-dot">◆</span><span class="m-item">SUPPLEMENTS</span><span class="m-dot">◆</span><span class="m-item">30+ YEARS</span><span class="m-dot">◆</span><span class="m-item">STRENGTH</span><span class="m-dot">◆</span><span class="m-item">تدريب احترافي</span><span class="m-dot">◆</span><span class="m-item">BODYBUILDING</span><span class="m-dot">◆</span><span class="m-item">كمال الأجسام</span><span class="m-dot">◆</span><span class="m-item">CLUB RENAISSANCE</span><span class="m-dot">◆</span><span class="m-item">آسفي المغرب</span><span class="m-dot">◆</span><span class="m-item">SUPPLEMENTS</span><span class="m-dot">◆</span><span class="m-item">30+ YEARS</span><span class="m-dot">◆</span><span class="m-item">STRENGTH</span><span class="m-dot">◆</span><span class="m-item">تدريب احترافي</span><span class="m-dot">◆</span>
+      <span class="m-item">BODYBUILDING</span><span class="m-dot">◆</span><span class="m-item">كمال الأجسام</span><span class="m-dot">◆</span><span class="m-item">CLUB RENAISSANCE</span><span class="m-dot">◆</span><span class="m-item">آسفي المغرب</span><span class="m-dot">◆</span><span class="m-item">30+ YEARS</span><span class="m-dot">◆</span><span class="m-item">SUPPLEMENTS</span><span class="m-dot">◆</span><span class="m-item">STRENGTH</span><span class="m-dot">◆</span><span class="m-item">تدريب احترافي</span><span class="m-dot">◆</span><span class="m-item">BODYBUILDING</span><span class="m-dot">◆</span><span class="m-item">كمال الأجسام</span><span class="m-dot">◆</span><span class="m-item">CLUB RENAISSANCE</span><span class="m-dot">◆</span><span class="m-item">آسفي المغرب</span><span class="m-dot">◆</span><span class="m-item">30+ YEARS</span><span class="m-dot">◆</span><span class="m-item">SUPPLEMENTS</span><span class="m-dot">◆</span><span class="m-item">STRENGTH</span><span class="m-dot">◆</span><span class="m-item">تدريب احترافي</span><span class="m-dot">◆</span>
     </div>
   </div>
+
   <section class="section" style="background:var(--dark);">
-    <div class="s-hdr"><span class="s-eye">لماذا نحن</span><div class="s-title">النادي الذي يصنع <span class="acc">الأبطال</span></div><div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div></div>
+    <div class="s-hdr">
+      <span class="s-eye">لماذا نحن</span>
+      <div class="s-title">النادي الذي يصنع <span class="acc">الأبطال</span></div>
+      <div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div>
+    </div>
     <div class="eq-grid">
       <div class="eq-card"><span class="eq-icon">🏋️</span><div class="eq-name">معدات احترافية</div><div class="eq-desc">أوزان حرة وأجهزة متخصصة لكل عضلة</div><span class="eq-tag">PROFESSIONAL</span></div>
       <div class="eq-card"><span class="eq-icon">👨‍🏫</span><div class="eq-name">مدربون خبراء</div><div class="eq-desc">خبرة عشرات السنين في كمال الأجسام</div><span class="eq-tag">EXPERT</span></div>
       <div class="eq-card"><span class="eq-icon">🚿</span><div class="eq-name">حمامات ودش</div><div class="eq-desc">نظيفة مع دش سخن بعد كل تمرين</div><span class="eq-tag">COMFORT</span></div>
       <div class="eq-card"><span class="eq-icon">🛒</span><div class="eq-name">متجر مكملات</div><div class="eq-desc">كرياتين، بروتين، وكل ما تحتاجه</div><span class="eq-tag">SHOP</span></div>
-      <div class="eq-card"><span class="eq-icon">💪</span><div class="eq-name">تخصص 100%</div><div class="eq-desc">كمال أجسام للرجال فقط</div><span class="eq-tag">FOCUSED</span></div>
+      <div class="eq-card"><span class="eq-icon">💪</span><div class="eq-name">تخصص 100%</div><div class="eq-desc">كمال أجسام للرجال فقط — تركيز كامل</div><span class="eq-tag">FOCUSED</span></div>
     </div>
   </section>
+
   <section class="section">
-    <div class="s-hdr"><span class="s-eye">الاشتراكات</span><div class="s-title">أسعار <span class="gold">تناسب الجميع</span></div><p class="s-desc">ابدأ من 200 درهم فقط</p><div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div></div>
+    <div class="s-hdr">
+      <span class="s-eye">الاشتراكات</span>
+      <div class="s-title">أسعار <span class="gold">تناسب الجميع</span></div>
+      <p class="s-desc">ابدأ من 200 درهم فقط</p>
+      <div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div>
+    </div>
     <div class="subs-grid" id="home-subs"></div>
-    <div style="text-align:center;margin-top:32px;"><button class="btn-outline" onclick="nav('subscriptions')">عرض جميع الباقات ←</button></div>
+    <div style="text-align:center;margin-top:32px;">
+      <button class="btn-outline" onclick="nav('subscriptions')">عرض جميع الباقات ←</button>
+    </div>
   </section>
+
   <section class="section" style="background:var(--dark);border-top:1px solid rgba(255,255,255,0.03);">
-    <div class="s-hdr"><span class="s-eye">المتجر</span><div class="s-title">مكملات <span class="acc">غذائية</span> أصلية</div><p class="s-desc">منتجات من أفضل الشركات العالمية</p><div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div></div>
+    <div class="s-hdr">
+      <span class="s-eye">المتجر</span>
+      <div class="s-title">مكملات <span class="acc">غذائية</span> احترافية</div>
+      <p class="s-desc">منتجات مختارة بعناية لمساعدتك على تحقيق أهدافك</p>
+      <div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div>
+    </div>
     <div class="store-grid" id="home-store"></div>
-    <div style="text-align:center;margin-top:32px;"><button class="btn-red" style="padding:14px 36px;font-size:15px;" onclick="nav('store')">عرض جميع المنتجات 🛒</button></div>
+    <div style="text-align:center;margin-top:32px;">
+      <button class="btn-red" style="padding:14px 36px;font-size:15px;" onclick="nav('store')">عرض جميع المنتجات 🛒</button>
+    </div>
   </section>
+
   <footer>
     <div class="f-inner">
       <div class="f-top">
@@ -342,7 +503,7 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
           </div>
         </div>
         <div class="f-col"><h5>الصفحات</h5><ul class="f-links"><li><a onclick="nav('home')">الرئيسية</a></li><li><a onclick="nav('about')">من نحن</a></li><li><a onclick="nav('subscriptions')">الاشتراكات</a></li><li><a onclick="nav('coaching')">التدريب</a></li><li><a onclick="nav('store')">المتجر</a></li><li><a onclick="nav('contact')">تواصل</a></li></ul></div>
-        <div class="f-col"><h5>الباقات</h5><ul class="f-links"><li><a onclick="subscribeNow('m','شهر',200)">شهر — 200 درهم</a></li><li><a onclick="subscribeNow('q','3+1 أشهر',600)">3+1 — 600 درهم</a></li><li><a onclick="subscribeNow('b','6 أشهر',800)">6 أشهر — 800 درهم</a></li><li><a onclick="subscribeNow('a','سنة',1000)">سنة — 1000 درهم</a></li></ul></div>
+        <div class="f-col"><h5>الباقات</h5><ul class="f-links"><li><a onclick="subscribeNow('monthly','شهر واحد',200)">شهر — 200 درهم</a></li><li><a onclick="subscribeNow('quarterly','3+1 أشهر',600)">3+1 — 600 درهم</a></li><li><a onclick="subscribeNow('biannual','6 أشهر',800)">6 أشهر — 800 درهم</a></li><li><a onclick="subscribeNow('annual','سنة كاملة',1000)">سنة — 1000 درهم</a></li></ul></div>
         <div class="f-col"><h5>تواصل</h5><ul class="f-links"><li><a href="https://www.instagram.com/clubrenaissancedesafi/" target="_blank">📸 إنستغرام</a></li><li><a href="https://www.facebook.com/clubrenaissancedesafi" target="_blank">👥 فيسبوك</a></li><li><a href="https://wa.me/212667069474" target="_blank">💬 واتساب</a></li><li><a onclick="nav('contact')">📍 آسفي، المغرب</a></li></ul></div>
       </div>
       <div class="f-bottom">
@@ -353,22 +514,19 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
   </footer>
 </div>
 
-<!-- ABOUT -->
+<!-- ══ ABOUT ══ -->
 <div class="page" id="page-about">
   <section class="section">
     <div class="s-hdr"><span class="s-eye">من نحن</span><div class="s-title">تاريخ من <span class="acc">القوة والعزيمة</span></div><div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div></div>
     <div class="about-wrap">
-      <div class="about-badge-wrap">
-        <div class="about-img">🏋️</div>
-        <div class="a-badge"><div class="num">30+</div><div class="txt">YEARS</div></div>
-      </div>
+      <div class="about-badge-wrap"><div class="about-img">🏋️</div><div class="a-badge"><div class="num">30+</div><div class="txt">YEARS</div></div></div>
       <div class="about-text">
         <h2>النادي الذي علّم آسفي معنى <span class="acc">الإرادة</span></h2>
         <p>Club Renaissance de Safi من أقدم وأعرق أندية كمال الأجسام في آسفي. منذ عشرات السنين نساعد الرجال على بناء أجسامهم وتطوير أنفسهم.</p>
         <div class="feats">
-          <div class="feat"><div class="feat-icon">🏋️</div><div class="feat-body"><h4>معدات احترافية</h4><p>أوزان حرة، أجهزة ضغط، كابلات لكل عضلة</p></div></div>
+          <div class="feat"><div class="feat-icon">🏋️</div><div class="feat-body"><h4>معدات احترافية متكاملة</h4><p>أوزان حرة، أجهزة ضغط، كابلات لكل عضلة</p></div></div>
           <div class="feat"><div class="feat-icon">🚿</div><div class="feat-body"><h4>حمامات ودش مريحة</h4><p>دش سخن وحمامات نظيفة بعد كل تمرين</p></div></div>
-          <div class="feat"><div class="feat-icon">🛒</div><div class="feat-body"><h4>متجر مكملات</h4><p>كرياتين، واي بروتين، BCAA وكل ما تحتاجه</p></div></div>
+          <div class="feat"><div class="feat-icon">🛒</div><div class="feat-body"><h4>متجر مكملات غذائية</h4><p>كرياتين، واي بروتين، BCAA وكل ما تحتاجه</p></div></div>
           <div class="feat"><div class="feat-icon">📅</div><div class="feat-body"><h4>خبرة أكثر من 30 سنة</h4><p>من المبتدئ للمحترف — نعرف احتياجاتك</p></div></div>
         </div>
       </div>
@@ -388,7 +546,7 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
   <div class="mini-footer"><div class="f-copy">© 2026 Club Renaissance de Safi</div><div class="f-made">Built by <a href="https://sitebladi.github.io" target="_blank">SiteBladi 🇲🇦</a></div></div>
 </div>
 
-<!-- SUBSCRIPTIONS -->
+<!-- ══ SUBSCRIPTIONS ══ -->
 <div class="page" id="page-subscriptions">
   <section class="section">
     <div class="s-hdr"><span class="s-eye">الأسعار والباقات</span><div class="s-title">اختر <span class="acc">باقتك</span></div><p class="s-desc">أسعار شفافة — الوصول الكامل للقاعة في كل الباقات</p><div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div></div>
@@ -403,7 +561,7 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
   <div class="mini-footer"><div class="f-copy">© 2026 Club Renaissance de Safi</div><div class="f-made">Built by <a href="https://sitebladi.github.io" target="_blank">SiteBladi 🇲🇦</a></div></div>
 </div>
 
-<!-- COACHING -->
+<!-- ══ COACHING ══ -->
 <div class="page" id="page-coaching">
   <section class="section">
     <div class="s-hdr"><span class="s-eye">التدريب الاحترافي</span><div class="s-title">مدرب <span class="acc">خاص</span> لهدفك</div><div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div></div>
@@ -421,7 +579,7 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
         </div>
       </div>
       <div class="c-side">
-        <div class="c-stat"><div class="c-stat-num">+30</div><div class="c-stat-lbl">سنة خبرة</div></div>
+        <div class="c-stat"><div class="c-stat-num">+30</div><div class="c-stat-lbl">سنة خبرة في التدريب</div></div>
         <div class="c-stat"><div class="c-stat-num">100%</div><div class="c-stat-lbl">برنامج مخصص لك</div></div>
         <div class="c-price-box"><p>تواصل لمعرفة السعر</p><div class="price">سعر خاص 📞</div></div>
         <button class="btn-red" style="width:100%;padding:14px;font-size:15px;border-radius:8px;" onclick="openWA('coaching')">احجز جلسة تقييم مجانية</button>
@@ -440,16 +598,16 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
   <div class="mini-footer"><div class="f-copy">© 2026 Club Renaissance de Safi</div><div class="f-made">Built by <a href="https://sitebladi.github.io" target="_blank">SiteBladi 🇲🇦</a></div></div>
 </div>
 
-<!-- STORE -->
+<!-- ══ STORE ══ -->
 <div class="page" id="page-store">
   <section class="section">
-    <div class="s-hdr"><span class="s-eye">المتجر</span><div class="s-title">مكملات <span class="acc">غذائية</span> أصلية</div><p class="s-desc">منتجات أصلية من أفضل الشركات العالمية — اطلب وسنوصل لك</p><div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div></div>
+    <div class="s-hdr"><span class="s-eye">المتجر</span><div class="s-title">مكملات <span class="acc">غذائية</span> احترافية</div><p class="s-desc">منتجات مختارة بعناية — اطلب وسنوصل لك</p><div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div></div>
     <div class="filter-wrap">
       <button class="filter-btn active" onclick="filterCat('all',this)">الكل</button>
-      <button class="filter-btn" onclick="filterCat('protein',this)">💪 بروتين وأحماض</button>
+      <button class="filter-btn" onclick="filterCat('protein',this)">💪 بروتين</button>
       <button class="filter-btn" onclick="filterCat('creatine',this)">⚡ كرياتين</button>
       <button class="filter-btn" onclick="filterCat('vitamins',this)">💊 فيتامينات</button>
-      <button class="filter-btn" onclick="filterCat('burner',this)">🔥 حرق دهون</button>
+      <button class="filter-btn" onclick="filterCat('clothing',this)">👕 ملابس</button>
     </div>
     <div class="store-grid" id="store-grid"></div>
     <div class="cart-bar" id="cart-bar">
@@ -460,7 +618,7 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
   <div class="mini-footer" style="margin-bottom:70px;"><div class="f-copy">© 2026 Club Renaissance de Safi</div><div class="f-made">Built by <a href="https://sitebladi.github.io" target="_blank">SiteBladi 🇲🇦</a></div></div>
 </div>
 
-<!-- CONTACT -->
+<!-- ══ CONTACT ══ -->
 <div class="page" id="page-contact">
   <section class="section">
     <div class="s-hdr"><span class="s-eye">تواصل معنا</span><div class="s-title">نحن <span class="acc">هنا لك</span></div><p class="s-desc">نرد في أقل من ساعة</p><div class="s-line"><span class="sl1"></span><span class="sl2"></span><span class="sl3"></span></div></div>
@@ -492,227 +650,231 @@ footer{background:#040404;border-top:1px solid rgba(204,0,0,0.15);padding:56px 4
   <div class="mini-footer"><div class="f-copy">© 2026 Club Renaissance de Safi — جميع الحقوق محفوظة</div><div class="f-made">Built by <a href="https://sitebladi.github.io" target="_blank">SiteBladi 🇲🇦</a></div></div>
 </div>
 
+<!-- ══ مودال تفاصيل المنتج ══ -->
+<div id="product-modal" onclick="handleModalBg(event)">
+  <div class="modal-container">
+    <div class="modal-top-bar">
+      <div><div class="modal-cat-tag" id="m-cat"></div><div class="modal-prod-title" id="m-name"></div></div>
+      <button class="modal-close-btn" onclick="closeProduct()">×</button>
+    </div>
+    <div class="modal-content">
+      <div class="modal-img-wrap" id="m-img"></div>
+      <div class="modal-price-row">
+        <div class="modal-price-big" id="m-price"></div>
+        <div class="modal-weight-tag" id="m-weight"></div>
+      </div>
+      <div class="modal-certs" id="m-certs"></div>
+      <div class="modal-long-desc" id="m-desc"></div>
+      <div id="m-rating" style="color:var(--gold);margin-bottom:18px;font-size:15px;"></div>
+      <div class="modal-tabs">
+        <button class="modal-tab active" onclick="switchTab(this,'t-how')">كيفية الاستخدام</button>
+        <button class="modal-tab" onclick="switchTab(this,'t-nut')">القيم الغذائية</button>
+        <button class="modal-tab" onclick="switchTab(this,'t-ing')">المكونات</button>
+        <button class="modal-tab" onclick="switchTab(this,'t-rev')">آراء العملاء</button>
+        <button class="modal-tab" onclick="switchTab(this,'t-rel')">مشابهة</button>
+      </div>
+      <div id="t-how" class="modal-tab-pane active"></div>
+      <div id="t-nut" class="modal-tab-pane"></div>
+      <div id="t-ing" class="modal-tab-pane"><p style="font-size:13px;color:var(--gray);margin-bottom:10px;">المكونات:</p><div class="ing-list" id="m-ing"></div></div>
+      <div id="t-rev" class="modal-tab-pane"></div>
+      <div id="t-rel" class="modal-tab-pane"><p style="font-size:13px;color:var(--gray);margin-bottom:10px;">قد يعجبك أيضاً:</p><div class="modal-related-grid" id="m-rel"></div></div>
+      <button class="modal-add-btn" id="m-add-btn">+ أضف للسلة</button>
+    </div>
+  </div>
+</div>
+
 <a class="wa-btn" href="https://wa.me/212667069474" target="_blank">💬</a>
 
 <script>
-const WHATSAPP='212667069474';
-const MAPS_URL='https://maps.google.com/?q=Club+Renaissance+Safi+Maroc';
+/* ════════════════════════════════════════════
+   CLUB RENAISSANCE — JS v3.0
+   رقم واتساب: 212667069474
+════════════════════════════════════════════ */
+const WHATSAPP = '212667069474';
+const MAPS_URL = 'https://maps.google.com/?q=Club+Renaissance+Safi+Maroc';
 
-/* ============================================================
-   SVG ICONS — صور احترافية مرسومة تشتغل 100% بدون internet
-   كل منتج له تصميم خاص بألوان شركته
-============================================================ */
-const SVGS = {
-  whey: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD700"/><stop offset="100%" stop-color="#FF8C00"/></linearGradient></defs>
-    <rect x="25" y="30" width="70" height="130" rx="8" fill="url(#g1)"/>
-    <rect x="30" y="20" width="60" height="20" rx="4" fill="#CC7000"/>
-    <rect x="28" y="158" width="64" height="8" rx="4" fill="#CC7000"/>
-    <text x="60" y="82" text-anchor="middle" fill="#fff" font-size="9" font-weight="900" font-family="Arial">OPTIMUM</text>
-    <text x="60" y="95" text-anchor="middle" fill="#fff" font-size="9" font-weight="900" font-family="Arial">NUTRITION</text>
-    <text x="60" y="112" text-anchor="middle" fill="#fff" font-size="11" font-weight="900" font-family="Arial">GOLD</text>
-    <text x="60" y="125" text-anchor="middle" fill="#fff" font-size="11" font-weight="900" font-family="Arial">STANDARD</text>
-    <text x="60" y="142" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="8" font-family="Arial">100% WHEY PROTEIN</text>
-    <text x="60" y="55" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="Arial">24g</text>
-    <text x="60" y="65" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="7" font-family="Arial">PROTEIN</text>
-  </svg>`,
-
-  creatine_on: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/></linearGradient></defs>
-    <rect x="20" y="25" width="80" height="145" rx="6" fill="url(#g2)"/>
-    <rect x="25" y="15" width="70" height="18" rx="4" fill="#0f3460"/>
-    <rect x="22" y="168" width="76" height="8" rx="4" fill="#0f3460"/>
-    <text x="60" y="75" text-anchor="middle" fill="#FFD700" font-size="9" font-weight="900" font-family="Arial">OPTIMUM</text>
-    <text x="60" y="87" text-anchor="middle" fill="#FFD700" font-size="9" font-weight="900" font-family="Arial">NUTRITION</text>
-    <text x="60" y="108" text-anchor="middle" fill="#fff" font-size="12" font-weight="900" font-family="Arial">CREATINE</text>
-    <text x="60" y="122" text-anchor="middle" fill="#aaa" font-size="8" font-family="Arial">MONOHYDRATE</text>
-    <text x="60" y="140" text-anchor="middle" fill="#FFD700" font-size="9" font-family="Arial">5g per serving</text>
-    <text x="60" y="52" text-anchor="middle" fill="#fff" font-size="11" font-weight="700" font-family="Arial">300g</text>
-  </svg>`,
-
-  bcaa: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e63946"/><stop offset="100%" stop-color="#c1121f"/></linearGradient></defs>
-    <rect x="22" y="28" width="76" height="140" rx="8" fill="url(#g3)"/>
-    <rect x="28" y="18" width="64" height="18" rx="4" fill="#9d0208"/>
-    <rect x="24" y="165" width="72" height="8" rx="4" fill="#9d0208"/>
-    <text x="60" y="72" text-anchor="middle" fill="#fff" font-size="10" font-weight="900" font-family="Arial">SCITEC</text>
-    <text x="60" y="85" text-anchor="middle" fill="#fff" font-size="9" font-family="Arial">NUTRITION</text>
-    <text x="60" y="108" text-anchor="middle" fill="#FFD700" font-size="16" font-weight="900" font-family="Arial">BCAA</text>
-    <text x="60" y="122" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="Arial">2:1:1</text>
-    <text x="60" y="140" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="8" font-family="Arial">AMINO ACIDS</text>
-    <text x="60" y="50" text-anchor="middle" fill="#fff" font-size="10" font-weight="700" font-family="Arial">300g</text>
-  </svg>`,
-
-  creatine_hcl: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1b1b2f"/><stop offset="100%" stop-color="#2c2c54"/></linearGradient></defs>
-    <rect x="20" y="25" width="80" height="145" rx="6" fill="url(#g4)"/>
-    <rect x="25" y="15" width="70" height="18" rx="4" fill="#7b2d8b"/>
-    <rect x="22" y="167" width="76" height="8" rx="4" fill="#7b2d8b"/>
-    <text x="60" y="72" text-anchor="middle" fill="#fff" font-size="10" font-weight="900" font-family="Arial">MUSCLE</text>
-    <text x="60" y="84" text-anchor="middle" fill="#da70d6" font-size="10" font-weight="900" font-family="Arial">TECH</text>
-    <text x="60" y="106" text-anchor="middle" fill="#da70d6" font-size="11" font-weight="900" font-family="Arial">CREATINE</text>
-    <text x="60" y="119" text-anchor="middle" fill="#fff" font-size="9" font-weight="700" font-family="Arial">HCL PRO</text>
-    <text x="60" y="136" text-anchor="middle" fill="#aaa" font-size="8" font-family="Arial">ADVANCED FORMULA</text>
-    <text x="60" y="152" text-anchor="middle" fill="#da70d6" font-size="8" font-family="Arial">120 caps</text>
-  </svg>`,
-
-  preworkout: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff6b35"/><stop offset="100%" stop-color="#f7c59f"/></linearGradient></defs>
-    <rect x="22" y="28" width="76" height="140" rx="8" fill="#1a1a1a"/>
-    <rect x="28" y="18" width="64" height="18" rx="4" fill="#cc4400"/>
-    <rect x="24" y="165" width="72" height="8" rx="4" fill="#cc4400"/>
-    <text x="60" y="65" text-anchor="middle" fill="#ff6b35" font-size="14" font-weight="900" font-family="Arial">C4</text>
-    <text x="60" y="80" text-anchor="middle" fill="#ff6b35" font-size="10" font-weight="700" font-family="Arial">ORIGINAL</text>
-    <text x="60" y="98" text-anchor="middle" fill="#fff" font-size="9" font-family="Arial">PRE-WORKOUT</text>
-    <text x="60" y="115" text-anchor="middle" fill="#fff" font-size="8" font-family="Arial">CELLUCOR</text>
-    <text x="60" y="135" text-anchor="middle" fill="#ff6b35" font-size="8" font-family="Arial">200mg CAFFEINE</text>
-    <text x="60" y="150" text-anchor="middle" fill="#aaa" font-size="8" font-family="Arial">30 servings</text>
-    <polygon points="60,42 68,54 52,54" fill="#ff6b35"/>
-  </svg>`,
-
-  omega3: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0066cc"/><stop offset="100%" stop-color="#004499"/></linearGradient></defs>
-    <rect x="20" y="25" width="80" height="145" rx="6" fill="url(#g6)"/>
-    <rect x="25" y="15" width="70" height="18" rx="4" fill="#003377"/>
-    <rect x="22" y="168" width="76" height="8" rx="4" fill="#003377"/>
-    <text x="60" y="68" text-anchor="middle" fill="#fff" font-size="11" font-weight="900" font-family="Arial">NOW</text>
-    <text x="60" y="81" text-anchor="middle" fill="#FFD700" font-size="10" font-weight="700" font-family="Arial">FOODS</text>
-    <text x="60" y="102" text-anchor="middle" fill="#fff" font-size="11" font-weight="900" font-family="Arial">OMEGA-3</text>
-    <text x="60" y="116" text-anchor="middle" fill="#aad4ff" font-size="8" font-family="Arial">FISH OIL</text>
-    <text x="60" y="132" text-anchor="middle" fill="#FFD700" font-size="9" font-family="Arial">1000mg</text>
-    <text x="60" y="147" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8" font-family="Arial">200 softgels</text>
-    <ellipse cx="60" cy="50" rx="12" ry="8" fill="#FFD700" opacity="0.8"/>
-  </svg>`,
-
-  multivitamin: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g7" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8B0000"/><stop offset="100%" stop-color="#CC0000"/></linearGradient></defs>
-    <rect x="20" y="25" width="80" height="145" rx="6" fill="#111"/>
-    <rect x="25" y="15" width="70" height="18" rx="4" fill="#8B0000"/>
-    <rect x="22" y="168" width="76" height="8" rx="4" fill="#8B0000"/>
-    <text x="60" y="66" text-anchor="middle" fill="#CC0000" font-size="13" font-weight="900" font-family="Arial">ANIMAL</text>
-    <text x="60" y="80" text-anchor="middle" fill="#CC0000" font-size="13" font-weight="900" font-family="Arial">PAK</text>
-    <text x="60" y="100" text-anchor="middle" fill="#fff" font-size="9" font-family="Arial">MULTIVITAMIN</text>
-    <text x="60" y="113" text-anchor="middle" fill="#aaa" font-size="8" font-family="Arial">UNIVERSAL NUTRITION</text>
-    <text x="60" y="132" text-anchor="middle" fill="#CC0000" font-size="9" font-weight="700" font-family="Arial">44 PACKS</text>
-    <text x="60" y="148" text-anchor="middle" fill="#aaa" font-size="8" font-family="Arial">THE ULTIMATE TRAINING PACK</text>
-    <rect x="45" y="44" width="30" height="4" rx="2" fill="#CC0000"/>
-    <rect x="50" y="50" width="20" height="4" rx="2" fill="#CC0000" opacity="0.6"/>
-  </svg>`,
-
-  hydroxycut: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g8" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#cc0000"/><stop offset="100%" stop-color="#ff4400"/></linearGradient></defs>
-    <rect x="20" y="25" width="80" height="145" rx="6" fill="#0a0a0a"/>
-    <rect x="25" y="15" width="70" height="18" rx="4" fill="#990000"/>
-    <rect x="22" y="168" width="76" height="8" rx="4" fill="#990000"/>
-    <text x="60" y="65" text-anchor="middle" fill="#fff" font-size="9" font-weight="900" font-family="Arial">HYDROXYCUT</text>
-    <text x="60" y="78" text-anchor="middle" fill="#ff4400" font-size="11" font-weight="900" font-family="Arial">HARDCORE</text>
-    <text x="60" y="98" text-anchor="middle" fill="#fff" font-size="9" font-family="Arial">MUSCLTECH</text>
-    <text x="60" y="115" text-anchor="middle" fill="#ff4400" font-size="9" font-weight="700" font-family="Arial">FAT BURNER</text>
-    <text x="60" y="132" text-anchor="middle" fill="#aaa" font-size="8" font-family="Arial">100 capsules</text>
-    <polygon points="60,38 70,52 50,52" fill="#ff4400"/>
-    <polygon points="60,44 68,55 52,55" fill="#cc0000" opacity="0.6"/>
-  </svg>`,
-
-  lcarnitine: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g9" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ff6600"/><stop offset="100%" stop-color="#ff9900"/></linearGradient></defs>
-    <rect x="28" y="20" width="64" height="155" rx="32" fill="url(#g9)"/>
-    <rect x="32" y="10" width="56" height="16" rx="8" fill="#cc5200"/>
-    <rect x="34" y="172" width="52" height="10" rx="5" fill="#cc5200"/>
-    <text x="60" y="72" text-anchor="middle" fill="#fff" font-size="9" font-weight="900" font-family="Arial">SCITEC</text>
-    <text x="60" y="84" text-anchor="middle" fill="#fff" font-size="8" font-family="Arial">NUTRITION</text>
-    <text x="60" y="104" text-anchor="middle" fill="#fff" font-size="10" font-weight="900" font-family="Arial">L-CARNITINE</text>
-    <text x="60" y="118" text-anchor="middle" fill="#fff" font-size="12" font-weight="900" font-family="Arial">3000</text>
-    <text x="60" y="135" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="8" font-family="Arial">LIQUID · 450ml</text>
-  </svg>`,
-
-  zma: `<svg viewBox="0 0 120 200" width="90" height="150" xmlns="http://www.w3.org/2000/svg">
-    <defs><linearGradient id="g10" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a0533"/><stop offset="100%" stop-color="#2d0a52"/></linearGradient></defs>
-    <rect x="20" y="25" width="80" height="145" rx="6" fill="url(#g10)"/>
-    <rect x="25" y="15" width="70" height="18" rx="4" fill="#4a0e7d"/>
-    <rect x="22" y="168" width="76" height="8" rx="4" fill="#4a0e7d"/>
-    <text x="60" y="68" text-anchor="middle" fill="#fff" font-size="11" font-weight="900" font-family="Arial">NOW</text>
-    <text x="60" y="81" text-anchor="middle" fill="#FFD700" font-size="10" font-weight="700" font-family="Arial">FOODS</text>
-    <text x="60" y="104" text-anchor="middle" fill="#c77dff" font-size="16" font-weight="900" font-family="Arial">ZMA</text>
-    <text x="60" y="120" text-anchor="middle" fill="#fff" font-size="8" font-family="Arial">ZINC · MAGNESIUM · B6</text>
-    <text x="60" y="138" text-anchor="middle" fill="#c77dff" font-size="9" font-weight="700" font-family="Arial">90 capsules</text>
-    <circle cx="60" cy="50" r="8" fill="none" stroke="#c77dff" stroke-width="2"/>
-    <text x="60" y="54" text-anchor="middle" fill="#c77dff" font-size="8" font-weight="700" font-family="Arial">Z</text>
-  </svg>`,
-};
-
-/* ============================================================
-   🛒 PRODUCTS_DATA — باش تضيف منتج جديد انسخ كتلة {} وعدل:
-   {id, name, brand, cat:'protein|creatine|vitamins|burner',
-    price, desc, weight, badge:'BEST SELLER|NEW|TOP RATED|ADVANCED|',
-    svgKey: 'مفتاح SVG من SVGS أعلاه'}
-============================================================ */
+/* ════════════════════════════════════════════
+   PRODUCTS_DATA — لإضافة منتج جديد انسخ كتلة {}
+   img: رابط صورة المنتج الرسمية
+════════════════════════════════════════════ */
 const PRODUCTS = [
-  {id:1,name:'Whey Protein 100%',brand:'Optimum Nutrition',cat:'protein',price:350,desc:'واي بروتين ذهبي — 24g بروتين لكل وجبة. الأكثر مبيعاً في العالم.',weight:'908g — 29 وجبة',badge:'BEST SELLER',svgKey:'whey'},
-  {id:2,name:'Creatine Monohydrate',brand:'Optimum Nutrition',cat:'creatine',price:180,desc:'كرياتين مونوهيدرات نقي 100% — يزيد القوة والكتلة العضلية بشكل مثبت علمياً.',weight:'300g — 60 وجبة',badge:'TOP RATED',svgKey:'creatine_on'},
-  {id:3,name:'BCAA 2:1:1',brand:'Scitec Nutrition',cat:'protein',price:220,desc:'أحماض أمينية BCAA بنسبة 2:1:1 — تحمي العضلات وتسرع التعافي.',weight:'300g — 30 وجبة',badge:'',svgKey:'bcaa'},
-  {id:4,name:'Creatine HCL Pro',brand:'MuscleTech',cat:'creatine',price:220,desc:'كرياتين HCL متطور — امتصاص أسرع بدون انتفاخ. الجيل الجديد من الكرياتين.',weight:'120 كبسولة — 40 وجبة',badge:'ADVANCED',svgKey:'creatine_hcl'},
-  {id:5,name:'Pre-Workout C4 Original',brand:'Cellucor',cat:'protein',price:290,desc:'الأشهر عالمياً لما قبل التمرين — طاقة انفجارية 200mg كافيين وتركيز عالي.',weight:'195g — 30 وجبة',badge:'NEW',svgKey:'preworkout'},
-  {id:6,name:'Omega-3 Fish Oil',brand:'NOW Foods',cat:'vitamins',price:95,desc:'زيت السمك الغني بـ EPA وDHA — يدعم صحة القلب والمفاصل ويقلل الالتهابات.',weight:'200 كبسولة — 3 أشهر',badge:'',svgKey:'omega3'},
-  {id:7,name:'Animal Pak Multivitamin',brand:'Universal Nutrition',cat:'vitamins',price:280,desc:'مجمع الفيتامينات الأشهر بين الرياضيين منذ 1983 — 44 حزمة يومية كاملة.',weight:'44 حزمة — شهر ونص',badge:'TOP RATED',svgKey:'multivitamin'},
-  {id:8,name:'Hydroxycut Hardcore',brand:'MuscleTech',cat:'burner',price:320,desc:'حارق الدهون الأشهر عالمياً — يسرع الحرق ويزيد الطاقة والتركيز.',weight:'100 كبسولة — شهر',badge:'BEST SELLER',svgKey:'hydroxycut'},
-  {id:9,name:'L-Carnitine 3000',brand:'Scitec Nutrition',cat:'burner',price:150,desc:'إل-كارنيتين سائل 3000mg — يحول الدهون إلى طاقة ويدعم التنشيف الفعال.',weight:'450ml — 30 وجبة',badge:'',svgKey:'lcarnitine'},
-  {id:10,name:'ZMA Zinc & Magnesium',brand:'NOW Foods',cat:'vitamins',price:110,desc:'زنك + ماغنيسيوم + B6 — يحسن النوم العميق ويدعم التستوستيرون الطبيعي.',weight:'90 كبسولة — 3 أشهر',badge:'',svgKey:'zma'},
+  {
+    id:1, name:'Whey Protein Gold Standard', cat:'protein', price:350,
+    weight:'907g — 29 وجبة', icon:'🥛', badge:'BEST SELLER',
+    img:'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=500&q=80',
+    shortDesc:'واي بروتين ذهبي — 24g بروتين لكل وجبة. الأكثر مبيعاً عالمياً.',
+    longDesc:'Gold Standard Whey من Optimum Nutrition — الأكثر مبيعاً عالمياً منذ 30 سنة. 24g بروتين نقي، 5.5g BCAA طبيعي لكل حصة. ممتص في أقل من 45 دقيقة بعد التمرين.',
+    howToUse:['1 ملعقة (30g) في 180-240ml ماء بارد أو حليب','مباشرة بعد التمرين للاستفادة القصوى','يمكن استخدامه كوجبة خفيفة بين الوجبات','اخلطه بشيكر أو خلاط لأفضل نتيجة'],
+    nutrition:[['حجم الحصة','30g'],['سعرات','120 kcal'],['بروتين','24g'],['BCAA','5.5g'],['كربوهيدرات','3g'],['دهون','1.5g'],['سكر','1g']],
+    ingredients:['مزيج Whey Protein (معزول + مركز)','كاكاو طبيعي','نكهات طبيعية','ليسيتين الصويا','سوكرالوز'],
+    certs:['حلال ☪️','Informed Choice 🏅','ISO 22000 🏅','خالٍ من المنشطات 🚫'],
+    reviews:[{name:'كريم ب.',stars:5,date:'مارس 2025',txt:'أحسن واي بروتين جربته. الذوبان سريع والطعم ممتاز.',verified:true},{name:'سمير ت.',stars:5,date:'فبراير 2025',txt:'التعافي بعد التمرين تحسن كثيراً. أنصح به بشدة.',verified:true},{name:'رضا م.',stars:4,date:'يناير 2025',txt:'جودة لا تناقش. فرق ملحوظ في الكتلة بعد شهر.',verified:false}],
+    related:[3,5,2],
+  },
+  {
+    id:2, name:'Créatine Monohydrate 300g — BiotechUSA', cat:'creatine', price:180,
+    weight:'300g — 88 وجبة', icon:'💪', badge:'TOP RATED',
+    /* صورة BiotechUSA الرسمية */
+    img:'https://shop.biotechusa.com/cdn/shop/files/100-creatine-monohydrate-300-g-biotech-usa-unflavoured-01.png?v=1710853986&width=600',
+    shortDesc:'كرياتين BiotechUSA نقي 100% مايكرونايزد — 88 جرعة. درجة صيدلانية.',
+    longDesc:'100% Creatine Monohydrate من BiotechUSA — كرياتين مايكرونايزد (200 mesh) بدرجة صيدلانية. الشكل الأكثر بحثاً وتوثيقاً في تاريخ مكملات الرياضة. يجدد ATP في العضلات لتمكينك من رفع أثقال أكبر. نقاء 100% بدون إضافات.',
+    howToUse:['الصيانة: 3-5g يومياً بعد التمرين','اخلطه مع عصير أو مشروب بكربوهيدرات','التحميل (اختياري): 20g يومياً × 5 أيام','اشرب 2-3L ماء يومياً'],
+    nutrition:[['حجم الحصة','3.4g (1 سكوب)'],['كرياتين مونوهيدرات','3.4g'],['كرياتين نقي','3g'],['سعرات','0'],['كربوهيدرات','0'],['بروتين','0'],['صوديوم','0mg']],
+    ingredients:['كرياتين مونوهيدرات مايكرونايزد 100% — درجة صيدلانية'],
+    certs:['حلال ☪️','نباتي 🌱','خالٍ من الغلوتين','ISO 9001 🏅','مختبر معتمد 🔬','خالٍ من المنشطات 🚫'],
+    reviews:[{name:'يوسف ع.',stars:5,date:'أبريل 2025',txt:'BiotechUSA ما فيهاش كلام. البنش بريس زاد 10kg في 3 أسابيع.',verified:true},{name:'إسماعيل ر.',stars:5,date:'مارس 2025',txt:'الذوبان كامل، بدون طعم، بدون انتفاخ. هذا هو الكرياتين الصح.',verified:true},{name:'عبد الله م.',stars:4,date:'فبراير 2025',txt:'نتائج واضحة من الأسبوع الثاني. أنصح به لكل رياضي.',verified:true}],
+    related:[7,1,5],
+  },
+  {
+    id:3, name:'BCAA 8:1:1 Scitec Nutrition', cat:'protein', price:220,
+    weight:'300g — 30 وجبة', icon:'⚡', badge:'',
+    img:'https://images.unsplash.com/photo-1644982647869-8a08f3e73d68?w=500&q=80',
+    shortDesc:'BCAA بنسبة 8:1:1 غنية باللوسين — يحمي العضلات ويسرع التعافي.',
+    longDesc:'BCAA 8:1:1 من Scitec Nutrition — نسبة متطورة تحتوي على 8 أجزاء لوسين. اللوسين هو المحرك الرئيسي لبناء البروتين العضلي (MPS). يمنع الهدم العضلي أثناء التمرين المكثف.',
+    howToUse:['جرعة (10g) في 300-400ml ماء','أثناء التمرين أو بعده مباشرة','في أيام الراحة: قبل النوم','متاح بنكهات: بطيخ، ليمون، كولا'],
+    nutrition:[['حجم الحصة','10g'],['L-لوسين','6.8g'],['L-إيزولوسين','1.7g'],['L-فالين','1.5g'],['سعرات','37 kcal'],['كربوهيدرات','0.5g']],
+    ingredients:['L-لوسين','L-إيزولوسين','L-فالين','حمض الستريك','نكهة طبيعية','سوكرالوز'],
+    certs:['حلال ☪️','مختبر معتمد 🔬','خالٍ من المنشطات 🚫'],
+    reviews:[{name:'طارق ح.',stars:5,date:'مارس 2025',txt:'التعافي أسرع والآلام العضلية اختفت. فرق واضح عن BCAA العادي.',verified:true},{name:'محسن ق.',stars:4,date:'يناير 2025',txt:'نكهة البطيخ لذيذة جداً. يجعل التمرين أكثر متعة.',verified:false}],
+    related:[1,5,2],
+  },
+  {
+    id:4, name:'Animal Pak Multivitamin', cat:'vitamins', price:120,
+    weight:'44 باك — 44 يوم', icon:'🦁', badge:'',
+    img:'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=500&q=80',
+    shortDesc:'Animal Pak — المجمع الفيتاميني الأقوى للرياضيين منذ 1983.',
+    longDesc:'Animal Pak من Universal Nutrition — الأكثر مبيعاً في تاريخ مكملات الفيتامينات للرياضيين منذ 1983. 11 فيتامين، 7 معادن، أحماض أمينية، وإنزيمات هاضمة. مصمم للرياضيين الذين يتعرضون لضغط تمريني شديد.',
+    howToUse:['باك واحد يومياً مع وجبة الإفطار','اشرب كوب ماء كامل مع الحبات','للرياضيين المكثفين: باك صباحاً وآخر قبل التمرين','استمر 30-60 يوماً للنتائج الكاملة'],
+    nutrition:[['فيتامين C','1000mg'],['فيتامين D3','4000 IU'],['فيتامين B12','500mcg'],['زنك','30mg'],['ماغنيسيوم','400mg'],['حديد','18mg'],['إنزيمات هاضمة','500mg']],
+    ingredients:['مجمع فيتامينات B الكامل','فيتامين C','فيتامين D3','فيتامين E','زنك','ماغنيسيوم','إنزيمات هاضمة','مستخلص الزنجبيل'],
+    certs:['حلال ☪️','ISO 9001 🏅','وزارة الصحة 🏛️','مختبر معتمد 🔬','GMP معتمد'],
+    reviews:[{name:'فيصل ل.',stars:5,date:'أبريل 2025',txt:'Animal Pak من زمان هو الأفضل. الطاقة والتعافي في مستوى آخر.',verified:true},{name:'نورالدين ب.',stars:4,date:'مارس 2025',txt:'المناعة تحسنت والتعب بعد التمرين قل بشكل واضح.',verified:false}],
+    related:[6,10,3],
+  },
+  {
+    id:5, name:'Pre-Workout C4 Original — Cellucor', cat:'protein', price:290,
+    weight:'195g — 30 وجبة', icon:'🔥', badge:'NEW',
+    img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80',
+    shortDesc:'C4 Pre-Workout — الأكثر مبيعاً في العالم لأكثر من 10 سنوات.',
+    longDesc:'C4 Original من Cellucor — Pre-workout الأشهر والأكثر مبيعاً في العالم. تركيبة تحتوي على كافيين، بيتا ألانين، كرياتين نيترات، وأرجينين AKG. طاقة انفجارية، تركيز حاد، وضخ عضلي ممتاز.',
+    howToUse:['1 سكوب (6.5g) في 180-240ml ماء بارد','20-30 دقيقة قبل التمرين','ابدأ بنصف سكوب لتقييم التحمل','لا تتناوله بعد الساعة 5 مساءً'],
+    nutrition:[['حجم الحصة','6.5g'],['كافيين','150mg'],['بيتا ألانين (CarnoSyn®)','1.6g'],['كرياتين نيترات','1g'],['أرجينين AKG','1g'],['سعرات','5 kcal']],
+    ingredients:['كافيين أنهيدروس','CarnoSyn® بيتا ألانين','كرياتين نيترات (NO3-T®)','L-أرجينين AKG','فيتامين C','B6','B12','نكهات طبيعية','سوكرالوز'],
+    certs:['حلال ☪️','Informed Sport 🏅','مختبر معتمد 🔬','GMP معتمد'],
+    reviews:[{name:'عمر ك.',stars:5,date:'أبريل 2025',txt:'من التمرين الأول حسيت بفرق. الطاقة هائلة والتركيز أقوى.',verified:true},{name:'بشير س.',stars:4,date:'مارس 2025',txt:'الـ pump في العضلات خارق. يبقى معك طول التمرين.',verified:true}],
+    related:[1,2,3],
+  },
+  {
+    id:6, name:'Omega-3 Fish Oil — Now Foods', cat:'vitamins', price:95,
+    weight:'200 كبسولة — 100 يوم', icon:'🐟', badge:'',
+    img:'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=500&q=80',
+    shortDesc:'Omega-3 Now Foods — EPA 180mg + DHA 120mg. صحة القلب والمفاصل.',
+    longDesc:'Omega-3 Fish Oil من Now Foods — علامة موثوقة منذ 1968. كل كبسولة تحتوي على 180mg EPA و120mg DHA من زيت السمك النقي بدون رائحة. يقلل الالتهابات، يحسن مرونة المفاصل، ويدعم صحة القلب.',
+    howToUse:['2 كبسولة يومياً مع وجبة رئيسية','يفضّل تناوله مع وجبة دسمة','في الصباح مع الفطور أو المساء مع العشاء','يمكن الاستمرار طويل الأمد بأمان'],
+    nutrition:[['حجم الحصة','2 كبسولة'],['EPA','360mg'],['DHA','240mg'],['أوميغا 3 إجمالي','1000mg'],['سعرات','20 kcal'],['دهون','2g']],
+    ingredients:['زيت سمك نقي مركز','جيلاتين بقري (الكبسولة)','غليسيرين','ماء مقطر'],
+    certs:['حلال ☪️','ISO 9001 🏅','مختبر معتمد 🔬','خالٍ من الزئبق','Non-GMO 🌱','GMP معتمد'],
+    reviews:[{name:'أمين ص.',stars:5,date:'مارس 2025',txt:'ألام الركب بعد التمرين اختفت تقريباً. Now Foods موثوق.',verified:true},{name:'حكيم ز.',stars:4,date:'فبراير 2025',txt:'بدون رائحة سمك. الكبسولات سهلة البلع. ممتاز.',verified:true}],
+    related:[4,10,7],
+  },
+  {
+    id:7, name:'Creatine HCL — Kaged Muscle', cat:'creatine', price:220,
+    weight:'75 وجبة', icon:'🧪', badge:'ADVANCED',
+    img:'https://images.unsplash.com/photo-1579722820903-11d893bcd27a?w=500&q=80',
+    shortDesc:'Creatine HCL Kaged — امتصاص أسرع بـ70% بدون انتفاخ ولا تحميل.',
+    longDesc:'Creatine HCL من Kaged Muscle — يذوب 40 مرة أفضل من المونوهيدرات. امتصاصه أسرع بـ70%. لا انتفاخ، لا احتباس مائي، لا ألم في المعدة. مثالي للمرحلتين: البناء والتنشيف.',
+    howToUse:['1 سكوب (750mg) مع كوب ماء أو عصير','قبل التمرين بـ30 دقيقة أو بعده','لا حاجة لمرحلة تحميل مطلقاً','مناسب طوال السنة بدون دورات'],
+    nutrition:[['حجم الحصة','750mg'],['كرياتين HCL','750mg'],['سعرات','0'],['كربوهيدرات','0'],['بروتين','0'],['صوديوم','<5mg']],
+    ingredients:['كرياتين هيدروكلوريد — Crea-TRX® Patented'],
+    certs:['حلال ☪️','Informed Sport 🏅','مختبر معتمد 🔬','خالٍ من المنشطات 🚫','Non-GMO 🌱'],
+    reviews:[{name:'رياض م.',stars:5,date:'أبريل 2025',txt:'صفر انتفاخ وصفر ألم معدة. القوة زادت بأسبوع.',verified:true},{name:'إلياس ب.',stars:4,date:'مارس 2025',txt:'مناسب جداً للتنشيف. الكمية صغيرة لكن التأثير قوي.',verified:false}],
+    related:[2,1,5],
+  },
+  {
+    id:8, name:'قميص Renaissance الرياضي', cat:'clothing', price:150,
+    weight:'S / M / L / XL / XXL', icon:'👕', badge:'CLUB',
+    img:'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80&fit=crop',
+    shortDesc:'تيشرت رياضي أصيل بشعار كلوب رونيسانس — DryFit مقاوم للعرق.',
+    longDesc:'تيشرت رسمي لكلوب رونيسانس دو سافي. قماش Polyester-Cotton (180g/m²) بتقنية DryFit تمتص العرق. تصميم عصري بشعار النادي بطباعة سيلك سكرين متينة.',
+    howToUse:['غسيل في الغسالة على 30° درجة','لا تستخدم المبيض','تجفيف في الظل','متوفر: أسود، كحلي، رمادي داكن'],
+    nutrition:[['الخامة','60% Polyester + 40% Cotton'],['التقنية','DryFit'],['الوزن','180g/m²'],['الطباعة','سيلك سكرين متينة'],['البلد','صُنع في المغرب 🇲🇦'],['الضمان','استبدال خلال 7 أيام']],
+    ingredients:['60% بوليستر عالي الجودة','40% قطن مشانة','حبر سيلك سكرين صديق للبيئة'],
+    certs:['منتج محلي مغربي 🇲🇦','جودة مضمونة ✓'],
+    reviews:[{name:'وليد ف.',stars:5,date:'أبريل 2025',txt:'القماش مريح والطباعة ثابتة بعد 20 غسلة.',verified:true},{name:'أنس ح.',stars:5,date:'مارس 2025',txt:'الناس بدأوا يسألوني عن النادي بسببه!',verified:true}],
+    related:[9],
+  },
+  {
+    id:9, name:'شورت Training Pro Renaissance', cat:'clothing', price:130,
+    weight:'S / M / L / XL / XXL', icon:'🩲', badge:'CLUB',
+    img:'https://images.unsplash.com/photo-1483721310020-03333e577078?w=500&q=80&fit=crop',
+    shortDesc:'شورت تمرين DryFit بشعار Renaissance — حركة حرة 360° كاملة.',
+    longDesc:'شورت تمرين رسمي لكلوب رونيسانس. قماش Polyester 100% DryFit خفيف مرن يتكيف مع كل حركة. تصميم بدون تضييق مع جيبين جانبيين وخصر مطاطي قابل للتعديل.',
+    howToUse:['غسيل في الغسالة على 30° درجة','لا تستخدم المبيض','تجفيف سريع في الظل','متوفر: أسود، كحلي'],
+    nutrition:[['الخامة','100% Polyester DryFit'],['الوزن','140g/m²'],['المقاسات','S / M / L / XL / XXL'],['الجيوب','جيبان جانبيان'],['البلد','صُنع في المغرب 🇲🇦'],['الضمان','استبدال خلال 7 أيام']],
+    ingredients:['100% بوليستر DryFit','شريط مطاطي مقوى','طباعة نقل حراري متينة'],
+    certs:['منتج محلي مغربي 🇲🇦','جودة مضمونة ✓'],
+    reviews:[{name:'مصطفى ع.',stars:5,date:'فبراير 2025',txt:'خفيف ومريح، ما حسست بيه طول التمرين.',verified:true},{name:'حسن ر.',stars:4,date:'يناير 2025',txt:'جودة ممتازة بالنسبة للثمن.',verified:false}],
+    related:[8],
+  },
+  {
+    id:10, name:'ZMA Pro — Optimum Nutrition', cat:'vitamins', price:110,
+    weight:'180 كبسولة — 30 يوم', icon:'🌙', badge:'',
+    img:'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=500&q=80',
+    shortDesc:'ZMA Optimum Nutrition — ينام أعمق، يتعافى أسرع، تستوستيرون طبيعي.',
+    longDesc:'ZMA Pro من Optimum Nutrition — زنك أسبارتات، ماغنيسيوم أسبارتات، وفيتامين B6. يحسن جودة النوم العميق (REM) ويزيد إنتاج هرمون النمو الطبيعي (GH) أثناء النوم. يدعم مستويات التستوستيرون ويسرع التعافي الليلي.',
+    howToUse:['3 كبسولات 30-45 دقيقة قبل النوم','على معدة فارغة للامتصاص الأمثل','تجنب تناوله مع الكالسيوم أو الحليب','دورة: 8 أسابيع + أسبوع راحة'],
+    nutrition:[['حجم الحصة','3 كبسولات'],['زنك (أسبارتات)','30mg (273% DV)'],['ماغنيسيوم (أسبارتات)','450mg (107% DV)'],['فيتامين B6','10.5mg (618% DV)'],['سعرات','10'],['بروتين','0g']],
+    ingredients:['زنك أسبارتات','ماغنيسيوم أسبارتات','بيريدوكسين هيدروكلوريد (B6)','جيلاتين بقري (الكبسولة)'],
+    certs:['حلال ☪️','Informed Sport 🏅','مختبر معتمد 🔬','خالٍ من الغلوتين','GMP معتمد'],
+    reviews:[{name:'خالد ن.',stars:5,date:'أبريل 2025',txt:'نوم أعمق من أول أسبوع. الاستيقاظ أسهل والجسم متعافي.',verified:true},{name:'علي م.',stars:4,date:'مارس 2025',txt:'فرق ملحوظ في التعافي الليلي. آلام ما بعد التمرين قلت.',verified:true}],
+    related:[4,6,2],
+  },
 ];
 
-const BADGE_CLASS={
-  'BEST SELLER':'b-best',
-  'TOP RATED':'b-top',
-  'NEW':'b-new',
-  'ADVANCED':'b-adv',
-};
+const BADGE_MAP={'BEST SELLER':'pb-best','TOP RATED':'pb-top','NEW':'pb-new','ADVANCED':'pb-adv','CLUB':'pb-club'};
+const CAT_MAP={protein:'بروتين وأحماض',creatine:'كرياتين',vitamins:'فيتامينات',clothing:'ملابس النادي'};
+let cart=[], currentProduct=null;
 
-const CAT_AR={protein:'بروتين وأحماض',creatine:'كرياتين',vitamins:'فيتامينات',burner:'حرق دهون'};
-
-const BG_MAP={
-  whey:'linear-gradient(135deg,#1a1200,#3d2800)',
-  creatine_on:'linear-gradient(135deg,#0a0a1a,#16213e)',
-  bcaa:'linear-gradient(135deg,#1a0005,#3d0010)',
-  creatine_hcl:'linear-gradient(135deg,#0d0020,#1b1b2f)',
-  preworkout:'linear-gradient(135deg,#1a0800,#2d1100)',
-  omega3:'linear-gradient(135deg,#001020,#002040)',
-  multivitamin:'linear-gradient(135deg,#0a0000,#200000)',
-  hydroxycut:'linear-gradient(135deg,#0a0000,#1a0000)',
-  lcarnitine:'linear-gradient(135deg,#1a0800,#3d1500)',
-  zma:'linear-gradient(135deg,#0d0020,#1a0033)',
-};
-
-let cart=[];
-
+/* بطاقة المنتج */
 function prodHTML(p){
-  return `<div class="prod-card" data-cat="${p.cat}" id="pc-${p.id}">
-    <div class="prod-img" style="background:${BG_MAP[p.svgKey]||'#111'};">
-      ${p.badge?`<div class="prod-badge ${BADGE_CLASS[p.badge]||''}">${p.badge}</div>`:''}
-      ${SVGS[p.svgKey]||'<div style="font-size:60px;color:#fff;">💊</div>'}
+  const bc=BADGE_MAP[p.badge]||'';
+  return `<div class="prod-card" data-cat="${p.cat}" id="pc-${p.id}" onclick="openProduct(${p.id})">
+    <div class="prod-img" style="background:${p.img?'#fff':'#222'}">
+      ${p.badge?`<div class="prod-badge ${bc}">${p.badge}</div>`:''}
+      ${p.img?`<img src="${p.img}" alt="${p.name}" loading="lazy"
+        onerror="this.style.display='none';this.nextSibling.style.display='flex'">`:''}
+      <div class="prod-img-ph" style="display:${p.img?'none':'flex'}">${p.icon}</div>
     </div>
     <div class="prod-body">
-      <div class="prod-cat">${CAT_AR[p.cat]||p.cat}</div>
+      <div class="prod-cat">${CAT_MAP[p.cat]||p.cat}</div>
       <div class="prod-name">${p.name}</div>
-      <div class="prod-brand">🏭 ${p.brand}</div>
-      <div class="prod-desc">${p.desc}</div>
+      <div class="prod-desc">${p.shortDesc}</div>
       <div class="prod-weight">📦 ${p.weight}</div>
+      <div class="prod-rating">${renderStars(avgStars(p.reviews))} <span>(${p.reviews.length} تقييم)</span></div>
       <div class="prod-footer">
         <div class="prod-price">${p.price} <span>درهم</span></div>
-        <button class="add-btn" id="ab-${p.id}" onclick="addToCart(${p.id})">+ أضف</button>
+        <button class="add-btn" id="ab-${p.id}" onclick="event.stopPropagation();addToCart(${p.id})">+ أضف</button>
       </div>
     </div>
   </div>`;
 }
 
+function renderStars(n){
+  const f=Math.round(n),e=5-f;
+  return `<span style="color:var(--gold)">${'★'.repeat(f)}</span><span style="color:#333">${'★'.repeat(e)}</span>`;
+}
+function avgStars(rv){return rv.length?rv.reduce((s,r)=>s+r.stars,0)/rv.length:0;}
+
 function renderStore(){
   const g=document.getElementById('store-grid');
-  if(g)g.innerHTML=PRODUCTS.map(prodHTML).join('');
   const h=document.getElementById('home-store');
-  if(h)h.innerHTML=PRODUCTS.slice(0,3).map(prodHTML).join('');
+  if(g) g.innerHTML=PRODUCTS.map(prodHTML).join('');
+  if(h) h.innerHTML=PRODUCTS.slice(0,3).map(prodHTML).join('');
 }
 
 function filterCat(cat,btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+  if(btn) btn.classList.add('active');
   document.querySelectorAll('#store-grid .prod-card').forEach(c=>{
     c.classList.toggle('hidden',cat!=='all'&&c.dataset.cat!==cat);
   });
@@ -721,63 +883,212 @@ function filterCat(cat,btn){
 function addToCart(id){
   const p=PRODUCTS.find(x=>x.id===id);
   const ex=cart.find(x=>x.id===id);
-  if(ex)ex.qty++;else cart.push({...p,qty:1});
+  if(ex) ex.qty++; else cart.push({...p,qty:1});
   const btn=document.getElementById('ab-'+id);
   if(btn){btn.textContent='✓ أضيف';btn.classList.add('added');setTimeout(()=>{btn.textContent='+ أضف';btn.classList.remove('added');},2000);}
-  updateCart();
-  showToast(`✓ ${p.name} أضيف للسلة`);
+  updateCartUI();
+  showToast('✓ '+p.name+' أضيف للسلة');
 }
 
-function updateCart(){
+function updateCartUI(){
   const count=cart.reduce((s,i)=>s+i.qty,0);
   const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-  const e1=document.getElementById('cart-count');
-  const e2=document.getElementById('cart-total');
-  const bar=document.getElementById('cart-bar');
-  if(e1)e1.textContent=count;if(e2)e2.textContent=total;
-  if(bar)bar.classList.toggle('show',count>0);
+  const eC=document.getElementById('cart-count');
+  const eT=document.getElementById('cart-total');
+  const eB=document.getElementById('cart-bar');
+  if(eC) eC.textContent=count;
+  if(eT) eT.textContent=total;
+  if(eB) eB.classList.toggle('show',count>0);
 }
 
+/* مودال المنتج */
+function openProduct(id){
+  const p=PRODUCTS.find(x=>x.id===id);
+  if(!p) return;
+  currentProduct=p;
+  const modal=document.getElementById('product-modal');
+  if(!modal) return;
+
+  setEl('m-cat',CAT_MAP[p.cat]||p.cat);
+  setEl('m-name',p.name);
+  setEl('m-price',p.price+' درهم');
+  setEl('m-weight','📦 '+p.weight);
+  setEl('m-desc',p.longDesc);
+  setEl('m-rating',renderStars(avgStars(p.reviews))+` (${p.reviews.length} تقييم)`);
+
+  const imgEl=document.getElementById('m-img');
+  if(imgEl) imgEl.innerHTML=p.img
+    ?`<img src="${p.img}" alt="${p.name}" onerror="this.parentElement.innerHTML='<div style=\\'font-size:80px;text-align:center\\'>${p.icon}</div>'">`
+    :`<div style="font-size:80px;text-align:center">${p.icon}</div>`;
+
+  const cEl=document.getElementById('m-certs');
+  if(cEl) cEl.innerHTML=p.certs.map(c=>`<span class="cert-tag">${c}</span>`).join('');
+
+  const howEl=document.getElementById('t-how');
+  if(howEl) howEl.innerHTML=p.howToUse.map((s,i)=>`
+    <div class="how-step"><div class="how-num">${i+1}</div><div class="how-txt">${s}</div></div>`).join('');
+
+  const nutEl=document.getElementById('t-nut');
+  if(nutEl) nutEl.innerHTML=`<table class="nut-table"><thead><tr><th>العنصر</th><th>الكمية</th></tr></thead><tbody>
+    ${p.nutrition.map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join('')}</tbody></table>`;
+
+  const ingEl=document.getElementById('m-ing');
+  if(ingEl) ingEl.innerHTML=p.ingredients.map(i=>`<span class="ing-tag">${i}</span>`).join('');
+
+  const revEl=document.getElementById('t-rev');
+  if(revEl){
+    const avg=avgStars(p.reviews).toFixed(1);
+    revEl.innerHTML=`<div class="reviews-summary"><div class="reviews-avg">${avg}</div>
+      <div><div class="stars-big">${renderStars(Math.round(avg))}</div>
+      <div class="reviews-count">${p.reviews.length} تقييمات موثقة</div></div></div>
+      ${p.reviews.map(r=>`<div class="review-card">
+        <div class="review-header"><div>
+          <div class="review-name">${r.name}</div>
+          <div class="review-stars">${'★'.repeat(r.stars)+'☆'.repeat(5-r.stars)}</div>
+        </div><div class="review-date">${r.date}</div></div>
+        <div class="review-text">${r.txt}</div>
+        ${r.verified?'<div class="review-verified">✓ عملية شراء موثقة</div>':''}
+      </div>`).join('')}`;
+  }
+
+  const relEl=document.getElementById('m-rel');
+  if(relEl&&p.related){
+    relEl.innerHTML=p.related.map(rid=>PRODUCTS.find(x=>x.id===rid)).filter(Boolean).map(rp=>`
+      <div class="related-card" onclick="openProduct(${rp.id})">
+        <div class="related-img">${rp.img?`<img src="${rp.img}" alt="${rp.name}">`:rp.icon}</div>
+        <div><div class="related-name">${rp.name}</div><div class="related-price">${rp.price} درهم</div></div>
+      </div>`).join('');
+  }
+
+  const addBtn=document.getElementById('m-add-btn');
+  if(addBtn){
+    addBtn.textContent='+ أضف للسلة';
+    addBtn.classList.remove('added');
+    addBtn.onclick=()=>{
+      addToCart(p.id);
+      addBtn.textContent='✓ أضيف للسلة!';
+      addBtn.classList.add('added');
+      setTimeout(()=>{addBtn.textContent='+ أضف للسلة';addBtn.classList.remove('added');},2500);
+    };
+  }
+
+  // reset tabs
+  document.querySelectorAll('.modal-tab-pane').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.modal-tab').forEach(x=>x.classList.remove('active'));
+  document.getElementById('t-how').classList.add('active');
+  document.querySelector('.modal-tab').classList.add('active');
+
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeProduct(){
+  document.getElementById('product-modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+function handleModalBg(e){if(e.target===document.getElementById('product-modal'))closeProduct();}
+
+function switchTab(btn,id){
+  document.querySelectorAll('.modal-tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.modal-tab').forEach(b=>b.classList.remove('active'));
+  const pane=document.getElementById(id);
+  if(pane) pane.classList.add('active');
+  btn.classList.add('active');
+}
+
+/* Checkout */
 function checkout(){
-  if(!cart.length)return;
-  const lines=cart.map(i=>`• ${i.brand} ${i.name} x${i.qty} — ${i.price*i.qty} درهم`).join('\n');
+  if(!cart.length) return;
+  const lines=cart.map(i=>`• ${i.name} x${i.qty} — ${i.price*i.qty} درهم`).join('\n');
   const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
-  const msg=`السلام عليكم، أريد طلب:\n\n${lines}\n\n💰 المجموع: ${total} درهم\n\nأرجو التأكيد 🙏`;
+  const msg=`السلام عليكم 🏋️\nأريد طلب من متجر كلوب رونيسانس:\n\n${lines}\n\n💰 المجموع: ${total} درهم\n\nأرجو التأكيد 🙏`;
   window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank');
 }
 
-const subs=[
-  {id:'m',dur:'شهر واحد',durEn:'1 MONTH',price:200,save:'',pop:false,feats:['دخول غير محدود','جميع المعدات','حمامات ودش','إرشاد مجاني']},
-  {id:'q',dur:'3 أشهر + شهر مجاني',durEn:'3+1 MONTHS',price:600,save:'🎁 وفر 200 درهم — شهر مجاني!',pop:true,feats:['دخول غير محدود','جميع المعدات','حمامات ودش','شهر مجاني','أولوية في التمرين']},
-  {id:'b',dur:'6 أشهر',durEn:'6 MONTHS',price:800,save:'💰 وفر 400 درهم',pop:false,feats:['دخول غير محدود','جميع المعدات','حمامات ودش','تقييم جسم','خطة تمرين']},
-  {id:'a',dur:'سنة كاملة',durEn:'1 YEAR',price:1000,save:'🏆 وفر 1400 درهم!',pop:false,feats:['دخول غير محدود','جميع المعدات','حمامات ودش','تقييم شهري','خطة متكاملة','أولوية VIP']},
+function setEl(id,val){const el=document.getElementById(id);if(el)el.innerHTML=val;}
+
+/* Toast — تعريف واحد فقط */
+let _tt;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  if(!t) return;
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(_tt);_tt=setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+/* الاشتراكات */
+const SUBS=[
+  {id:'monthly',dur:'شهر واحد',durEn:'1 MONTH',price:200,save:'',pop:false,
+   feats:['دخول غير محدود','جميع المعدات','حمامات ودش','إرشاد مجاني']},
+  {id:'quarterly',dur:'3 أشهر + شهر مجاني',durEn:'3+1 MONTHS',price:600,
+   save:'🎁 وفر 200 درهم — شهر مجاني!',pop:true,
+   feats:['دخول غير محدود','جميع المعدات','حمامات ودش','شهر مجاني 🎁','أولوية في التمرين']},
+  {id:'biannual',dur:'6 أشهر',durEn:'6 MONTHS',price:800,
+   save:'💰 وفر 400 درهم',pop:false,
+   feats:['دخول غير محدود','جميع المعدات','حمامات ودش','تقييم جسم','خطة تمرين']},
+  {id:'annual',dur:'سنة كاملة',durEn:'1 YEAR',price:1000,
+   save:'🏆 وفر 1400 درهم!',pop:false,
+   feats:['دخول غير محدود','جميع المعدات','حمامات ودش','تقييم شهري','خطة متكاملة','أولوية VIP 👑']},
 ];
+function subHTML(s){
+  return `<div class="sub-card ${s.pop?'pop':''}" onclick="subscribeNow('${s.id}','${s.dur}',${s.price})">
+    ${s.pop?'<div class="pop-badge">الأكثر اختياراً ⭐</div>':''}
+    <div class="sub-dur">${s.durEn}</div>
+    <div class="sub-price-wrap"><div class="sub-price">${s.price}</div><div class="sub-cur">درهم</div></div>
+    <div class="sub-save">${s.save}</div>
+    <ul class="sub-feats">${s.feats.map(f=>`<li><span class="chk">✓</span>${f}</li>`).join('')}</ul>
+    <button class="sub-btn">اشترك — ${s.dur}</button>
+  </div>`;
+}
 
-function subHTML(s){return`<div class="sub-card ${s.pop?'pop':''}" onclick="subscribeNow('${s.id}','${s.dur}',${s.price})">${s.pop?'<div class="pop-badge">الأكثر اختياراً ⭐</div>':''}<div class="sub-dur">${s.durEn}</div><div class="sub-price-wrap"><div class="sub-price">${s.price}</div><div class="sub-cur">درهم</div></div><div class="sub-save">${s.save}</div><ul class="sub-feats">${s.feats.map(f=>`<li><span class="chk">✓</span>${f}</li>`).join('')}</ul><button class="sub-btn">اشترك — ${s.dur}</button></div>`;}
-
-document.getElementById('home-subs').innerHTML=subs.slice(0,3).map(subHTML).join('');
-document.getElementById('full-subs').innerHTML=subs.map(subHTML).join('');
-renderStore();
-
+/* Navigation */
 function nav(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const pg=document.getElementById('page-'+id);
-  if(pg)pg.classList.add('active');
+  if(pg) pg.classList.add('active');
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('act'));
   const nl=document.getElementById('nl-'+id);
-  if(nl)nl.classList.add('act');
+  if(nl) nl.classList.add('act');
   window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='store') renderStore();
 }
-function toggleMenu(){document.getElementById('hamburger').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open');}
-function closeMenu(){document.getElementById('hamburger').classList.remove('open');document.getElementById('mobMenu').classList.remove('open');}
-function subscribeNow(id,name,price){const msg=`السلام عليكم، أريد الاشتراك:\n📦 ${name}\n💰 ${price} درهم`;window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank');showToast('جاري تحويلك للواتساب ✓');}
-function openWA(type){const msgs={coaching:'أريد حجز جلسة تقييم.',muscle:'أريد برنامج بناء كتلة.',fat:'أريد برنامج حرق دهون.',strength:'أريد برنامج قوة.',beginner:'أنا مبتدئ وأريد البدء.'};window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('السلام عليكم، '+(msgs[type]||'أريد الاستفسار.'))}`, '_blank');}
+
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobMenu').classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobMenu').classList.remove('open');
+}
+function subscribeNow(id,name,price){
+  const msg=`السلام عليكم 🏋️\nأريد الاشتراك في:\n📦 ${name}\n💰 ${price} درهم\n\nأرجو التأكيد 🙏`;
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+function openWA(type){
+  const msgs={coaching:'أريد حجز جلسة تقييم مجانية.',muscle:'أريد برنامج بناء كتلة.',fat:'أريد برنامج حرق دهون.',strength:'أريد برنامج زيادة القوة.',beginner:'أنا مبتدئ وأريد البدء من الصفر.'};
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent('السلام عليكم 🏋️، '+(msgs[type]||'أريد الاستفسار.'))}`, '_blank');
+}
 function openMaps(){window.open(MAPS_URL,'_blank');showToast('جاري فتح Google Maps 🗺️');}
-function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+
+/* Escape key */
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeProduct();});
+
+/* Particles */
 const pc=document.getElementById('particles');
-for(let i=0;i<18;i++){const p=document.createElement('div');p.className='particle';p.style.cssText=`left:${Math.random()*100}%;animation-duration:${8+Math.random()*12}s;animation-delay:${Math.random()*8}s;`;pc.appendChild(p);}
+if(pc){for(let i=0;i<18;i++){const p=document.createElement('div');p.className='particle';p.style.cssText=`left:${Math.random()*100}%;animation-duration:${8+Math.random()*12}s;animation-delay:${Math.random()*8}s;`;pc.appendChild(p);}}
+
+/* INIT */
+document.getElementById('home-subs').innerHTML=SUBS.slice(0,3).map(subHTML).join('');
+document.getElementById('full-subs').innerHTML=SUBS.map(subHTML).join('');
+renderStore();
+
+/* Loader */
 setTimeout(()=>{const l=document.getElementById('loader');l.classList.add('hide');setTimeout(()=>l.style.display='none',500);},1200);
-document.querySelectorAll('.eq-card,.sub-card,.fac-card,.feat,.c-card,.goal-card').forEach(el=>{new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.style.animation='fade-up 0.6s ease both';});},{threshold:0.1}).observe(el);});
+
+/* Scroll reveal */
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.animation='fade-up 0.6s ease both';ro.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.eq-card,.sub-card,.fac-card,.feat,.c-card,.goal-card').forEach(el=>ro.observe(el));
 </script>
 </body>
 </html>
